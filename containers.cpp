@@ -2,6 +2,11 @@
 #include <array>
 #include <vector>
 #include <print>
+#include <unordered_map>
+#include <utility>
+#include <map>
+#include <unordered_set>
+#include <set>
 
 void arrays(std::array<int,5>& arr){
 // arrays are fixed size. 
@@ -64,6 +69,63 @@ for(int&num: vec){
 vec.erase(vec.begin()+2);
   std::cout<<vec.size()<<'\n';
 
+std::println("{}", vec);
+};
+
+void unordered_map(std::unordered_map<int,int>& map){
+   // hashmap
+    std::cout<<map.size()<<'\n';
+    std::cout<<map.empty()<<'\n';
+    map.insert({3,3});
+    std::cout<<map[3]<<'\n';
+    std::cout<<map.size()<<'\n';
+    map.insert({4,4});
+    map.insert({5,5});
+    std::println("{}", map);
+
+    for(auto& [k,v]:map){
+        std::cout<<k<<'\n'<<v<<'\n';
+    }
+};
+
+void omap(std::map<int,int>& omap){
+// ordered hashmap , keys are unique
+    std::cout<<omap.size()<<'\n';
+    std::cout<<omap.empty()<<'\n';
+    omap.insert({3,3});
+    std::cout<<omap[3]<<'\n';
+    std::cout<<omap.size()<<'\n';
+    omap.insert({4,4});
+    omap.insert({5,5});
+    std::println("{}", omap);
+
+    for(auto& [k,v]:omap){
+        std::cout<<k<<'\n'<<v<<'\n';
+    }
+};
+
+void unordered_set(std::unordered_set<int>& set){
+    //set unique elements
+    std::cout<<set.size()<<'\n';
+    std::cout<<set.empty()<<'\n';   
+    set.insert(1);
+    set.insert(1);
+    set.insert(2);
+    set.insert(3);
+    std::println("{}",set);
+    std::cout<<*set.find(3)<<'\n';   
+};
+
+void oset(std::set<int>& oset){
+    //ordered set unique elements
+    std::cout<<oset.size()<<'\n';
+    std::cout<<oset.empty()<<'\n';   
+    oset.insert(1);
+    oset.insert(1);
+    oset.insert(2);
+    oset.insert(3);
+    std::println("{}",oset);
+    std::cout<<*oset.find(3)<<'\n';   
 };
 
 int main(){
@@ -76,5 +138,19 @@ int main(){
     std::vector<int> vec ={1,2,3};
     std::cout<<vec[0]<<'\n'<<vec[4]<<'\n';
     vector(vec);
+
+    std::unordered_map<int,int> map={{0,0}};
+    unordered_map(map);
+    
+    std::map<int,int> map2={{0,0}};
+    omap(map2);
+    
+    std::unordered_set<int> set={0};
+    unordered_set(set);
+
+    std::set<int> oset2={0};
+    oset(oset2);
+
+
 
 };
