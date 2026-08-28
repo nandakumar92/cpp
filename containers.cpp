@@ -7,6 +7,8 @@
 #include <map>
 #include <unordered_set>
 #include <set>
+#include <stack>
+#include <queue>
 
 void arrays(std::array<int,5>& arr){
 // arrays are fixed size. 
@@ -86,6 +88,10 @@ void unordered_map(std::unordered_map<int,int>& map){
     for(auto& [k,v]:map){
         std::cout<<k<<'\n'<<v<<'\n';
     }
+
+    for(auto item:map){
+        std::cout<<item.first<<":"<<item.second;
+    }
 };
 
 void omap(std::map<int,int>& omap){
@@ -128,6 +134,44 @@ void oset(std::set<int>& oset){
     std::cout<<*oset.find(3)<<'\n';   
 };
 
+void stack(std::stack<int>& stacks){
+    std::cout<<stacks.size()<<'\n';
+    std::cout<<stacks.empty()<<'\n';
+    stacks.push(10);
+    stacks.push(20);
+    stacks.push(30);
+    stacks.push(40);
+    std::cout<<stacks.top()<<'\n';
+    stacks.pop();
+    std::cout<<stacks.top()<<'\n';
+
+};
+
+void queue(std::queue<int>& queues){
+    std::cout<<queues.size()<<'\n';
+    std::cout<<queues.empty()<<'\n';
+    queues.push(10);
+    queues.push(20);
+    queues.push(30);
+    queues.push(40);
+    std::cout<<queues.front()<<'\n';
+    queues.pop();
+    std::cout<<queues.front()<<'\n';
+    std::cout<<queues.back()<<'\n';
+};
+
+void priority_queue(std::priority_queue<int>& pqueues){
+    std::cout<<pqueues.size()<<'\n';
+    std::cout<<pqueues.empty()<<'\n';
+    pqueues.push(10);
+    pqueues.push(20);
+    std::cout<<pqueues.top()<<'\n';
+    pqueues.push(30);
+    pqueues.push(40);
+    std::cout<<pqueues.top()<<'\n';
+};
+
+
 int main(){
     std::cout<<"main function"<<'\n';
 
@@ -150,7 +194,15 @@ int main(){
 
     std::set<int> oset2={0};
     oset(oset2);
+    
+    std::stack<int> stacks;
+    stack(stacks);
+    
+    std::queue<int> queues;
+    queue(queues);
 
+    std::priority_queue<int> pqueue;
+    priority_queue(pqueue);
 
 
 };
