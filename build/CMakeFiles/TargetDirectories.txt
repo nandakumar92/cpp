@@ -1,0 +1,7 @@
+/Users/nanda/Desktop/cpp/build/CMakeFiles/classes.dir
+/Users/nanda/Desktop/cpp/build/CMakeFiles/containers.dir
+/Users/nanda/Desktop/cpp/build/CMakeFiles/templates.dir
+/Users/nanda/Desktop/cpp/build/CMakeFiles/threads.dir
+/Users/nanda/Desktop/cpp/build/CMakeFiles/files.dir
+/Users/nanda/Desktop/cpp/build/CMakeFiles/edit_cache.dir
+/Users/nanda/Desktop/cpp/build/CMakeFiles/rebuild_cache.dir

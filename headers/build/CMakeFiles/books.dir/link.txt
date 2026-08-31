@@ -1,0 +1,1 @@
+/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/books.dir/books.cpp.o CMakeFiles/books.dir/main.cpp.o -o books

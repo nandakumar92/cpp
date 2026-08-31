@@ -1,0 +1,3 @@
+/Users/nanda/Desktop/cpp/headers/build/CMakeFiles/books.dir
+/Users/nanda/Desktop/cpp/headers/build/CMakeFiles/edit_cache.dir
+/Users/nanda/Desktop/cpp/headers/build/CMakeFiles/rebuild_cache.dir
