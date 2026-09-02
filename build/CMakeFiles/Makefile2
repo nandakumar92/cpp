@@ -68,6 +68,7 @@ all: CMakeFiles/containers.dir/all
 all: CMakeFiles/templates.dir/all
 all: CMakeFiles/threads.dir/all
 all: CMakeFiles/files.dir/all
+all: CMakeFiles/smartpointer.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
@@ -76,6 +77,7 @@ codegen: CMakeFiles/containers.dir/codegen
 codegen: CMakeFiles/templates.dir/codegen
 codegen: CMakeFiles/threads.dir/codegen
 codegen: CMakeFiles/files.dir/codegen
+codegen: CMakeFiles/smartpointer.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -88,6 +90,7 @@ clean: CMakeFiles/containers.dir/clean
 clean: CMakeFiles/templates.dir/clean
 clean: CMakeFiles/threads.dir/clean
 clean: CMakeFiles/files.dir/clean
+clean: CMakeFiles/smartpointer.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -161,7 +164,7 @@ CMakeFiles/containers.dir/clean:
 CMakeFiles/templates.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/templates.dir/build.make CMakeFiles/templates.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/templates.dir/build.make CMakeFiles/templates.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=7,8 "Built target templates"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=9,10 "Built target templates"
 .PHONY : CMakeFiles/templates.dir/all
 
 # Build rule for subdir invocation for target.
@@ -178,7 +181,7 @@ templates: CMakeFiles/templates.dir/rule
 # codegen rule for target.
 CMakeFiles/templates.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/templates.dir/build.make CMakeFiles/templates.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=7,8 "Finished codegen for target templates"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=9,10 "Finished codegen for target templates"
 .PHONY : CMakeFiles/templates.dir/codegen
 
 # clean rule for target.
@@ -193,7 +196,7 @@ CMakeFiles/templates.dir/clean:
 CMakeFiles/threads.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/threads.dir/build.make CMakeFiles/threads.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/threads.dir/build.make CMakeFiles/threads.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=9,10 "Built target threads"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=11,12 "Built target threads"
 .PHONY : CMakeFiles/threads.dir/all
 
 # Build rule for subdir invocation for target.
@@ -210,7 +213,7 @@ threads: CMakeFiles/threads.dir/rule
 # codegen rule for target.
 CMakeFiles/threads.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/threads.dir/build.make CMakeFiles/threads.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=9,10 "Finished codegen for target threads"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=11,12 "Finished codegen for target threads"
 .PHONY : CMakeFiles/threads.dir/codegen
 
 # clean rule for target.
@@ -249,6 +252,38 @@ CMakeFiles/files.dir/codegen:
 CMakeFiles/files.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/clean
 .PHONY : CMakeFiles/files.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/smartpointer.dir
+
+# All Build rule for target.
+CMakeFiles/smartpointer.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=7,8 "Built target smartpointer"
+.PHONY : CMakeFiles/smartpointer.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/smartpointer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nanda/Desktop/cpp/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/smartpointer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nanda/Desktop/cpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/smartpointer.dir/rule
+
+# Convenience name for target.
+smartpointer: CMakeFiles/smartpointer.dir/rule
+.PHONY : smartpointer
+
+# codegen rule for target.
+CMakeFiles/smartpointer.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/nanda/Desktop/cpp/build/CMakeFiles --progress-num=7,8 "Finished codegen for target smartpointer"
+.PHONY : CMakeFiles/smartpointer.dir/codegen
+
+# clean rule for target.
+CMakeFiles/smartpointer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/clean
+.PHONY : CMakeFiles/smartpointer.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

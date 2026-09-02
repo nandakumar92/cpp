@@ -181,6 +181,19 @@ files/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/build
 .PHONY : files/fast
 
+#=============================================================================
+# Target rules for targets named smartpointer
+
+# Build rule for target.
+smartpointer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 smartpointer
+.PHONY : smartpointer
+
+# fast build rule for target.
+smartpointer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/build
+.PHONY : smartpointer/fast
+
 classes.o: classes.cpp.o
 .PHONY : classes.o
 
@@ -253,6 +266,30 @@ files.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/files.cpp.s
 .PHONY : files.cpp.s
 
+smart_pointers.o: smart_pointers.cpp.o
+.PHONY : smart_pointers.o
+
+# target to build an object file
+smart_pointers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/smart_pointers.cpp.o
+.PHONY : smart_pointers.cpp.o
+
+smart_pointers.i: smart_pointers.cpp.i
+.PHONY : smart_pointers.i
+
+# target to preprocess a source file
+smart_pointers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/smart_pointers.cpp.i
+.PHONY : smart_pointers.cpp.i
+
+smart_pointers.s: smart_pointers.cpp.s
+.PHONY : smart_pointers.s
+
+# target to generate assembly for a file
+smart_pointers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/smart_pointers.cpp.s
+.PHONY : smart_pointers.cpp.s
+
 templates.o: templates.cpp.o
 .PHONY : templates.o
 
@@ -312,6 +349,7 @@ help:
 	@echo "... classes"
 	@echo "... containers"
 	@echo "... files"
+	@echo "... smartpointer"
 	@echo "... templates"
 	@echo "... threads"
 	@echo "... classes.o"
@@ -323,6 +361,9 @@ help:
 	@echo "... files.o"
 	@echo "... files.i"
 	@echo "... files.s"
+	@echo "... smart_pointers.o"
+	@echo "... smart_pointers.i"
+	@echo "... smart_pointers.s"
 	@echo "... templates.o"
 	@echo "... templates.i"
 	@echo "... templates.s"

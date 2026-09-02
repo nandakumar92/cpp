@@ -9,4 +9,4 @@ add_executable(containers containers.cpp)
 add_executable(templates templates.cpp)
 add_executable(threads threads.cpp)
 add_executable(files files.cpp)
-
+add_executable(smartpointer smart_pointers.cpp)
