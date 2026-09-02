@@ -1,5 +1,6 @@
 #include <iostream>
 #include <utility>
+#include <memory>
 
 class Laptop{
     private:
@@ -80,4 +81,13 @@ int main(){
  std::cout << "\n--- STEP 2: MOVE OWNERSHIP ---\n";
  SmartPtr<Laptop> laptop2(std::move(laptop1));
  laptop2->use();
+
+  std::cout << "\n--- STEP 3: std::unique_ptr ---\n";
+  auto laptop3 = std::make_unique<Laptop>(303);
+  laptop3->use();
+
+  std::cout << "\n--- STEP 4: MOVE std::unique_ptr ---\n";
+  auto laptop4 = std::move(laptop3);
+  laptop4->use();
+
 }
