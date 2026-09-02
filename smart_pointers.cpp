@@ -43,7 +43,6 @@ class SmartPtr{
         delete m_ptr;
      }
 
-
      //copy constructor allows dangling pointers when ojbect is create with other object
     //  SmartPtr(const SmartPtr& other)
     // : m_ptr(other.m_ptr)
@@ -61,14 +60,9 @@ class SmartPtr{
        std::cout << "SmartPtr MOVE constructor -> ownership transferred\n";
     };
 
-
-
      T* operator->(){
       return m_ptr;
      };
-
-   
-
 
 };
 
@@ -90,4 +84,19 @@ int main(){
   auto laptop4 = std::move(laptop3);
   laptop4->use();
 
+  std::cout << "\n--- STEP 5: std::shared_ptr ---\n";
+  auto laptop5 = std::make_shared<Laptop>(505);
+
+  {
+      auto laptop6 = laptop5;
+
+      laptop5->use();
+      laptop6->use();
+
+      std::cout << "Two shared_ptrs own the same Laptop\n";
+  }
+    std::cout << "laptop6 is gone\n";
+    laptop5->use();
+
+   std::cout << "laptop5 is the last owner\n";
 }
