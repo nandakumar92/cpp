@@ -194,6 +194,19 @@ smartpointer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/smartpointer.dir/build.make CMakeFiles/smartpointer.dir/build
 .PHONY : smartpointer/fast
 
+#=============================================================================
+# Target rules for targets named function_pointers
+
+# Build rule for target.
+function_pointers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 function_pointers
+.PHONY : function_pointers
+
+# fast build rule for target.
+function_pointers/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/function_pointers.dir/build.make CMakeFiles/function_pointers.dir/build
+.PHONY : function_pointers/fast
+
 classes.o: classes.cpp.o
 .PHONY : classes.o
 
@@ -265,6 +278,30 @@ files.s: files.cpp.s
 files.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/files.dir/build.make CMakeFiles/files.dir/files.cpp.s
 .PHONY : files.cpp.s
+
+function_pointers.o: function_pointers.cpp.o
+.PHONY : function_pointers.o
+
+# target to build an object file
+function_pointers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/function_pointers.dir/build.make CMakeFiles/function_pointers.dir/function_pointers.cpp.o
+.PHONY : function_pointers.cpp.o
+
+function_pointers.i: function_pointers.cpp.i
+.PHONY : function_pointers.i
+
+# target to preprocess a source file
+function_pointers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/function_pointers.dir/build.make CMakeFiles/function_pointers.dir/function_pointers.cpp.i
+.PHONY : function_pointers.cpp.i
+
+function_pointers.s: function_pointers.cpp.s
+.PHONY : function_pointers.s
+
+# target to generate assembly for a file
+function_pointers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/function_pointers.dir/build.make CMakeFiles/function_pointers.dir/function_pointers.cpp.s
+.PHONY : function_pointers.cpp.s
 
 smart_pointers.o: smart_pointers.cpp.o
 .PHONY : smart_pointers.o
@@ -349,6 +386,7 @@ help:
 	@echo "... classes"
 	@echo "... containers"
 	@echo "... files"
+	@echo "... function_pointers"
 	@echo "... smartpointer"
 	@echo "... templates"
 	@echo "... threads"
@@ -361,6 +399,9 @@ help:
 	@echo "... files.o"
 	@echo "... files.i"
 	@echo "... files.s"
+	@echo "... function_pointers.o"
+	@echo "... function_pointers.i"
+	@echo "... function_pointers.s"
 	@echo "... smart_pointers.o"
 	@echo "... smart_pointers.i"
 	@echo "... smart_pointers.s"

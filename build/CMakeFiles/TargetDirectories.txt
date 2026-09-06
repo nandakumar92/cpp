@@ -4,5 +4,6 @@
 /Users/nanda/Desktop/cpp/build/CMakeFiles/threads.dir
 /Users/nanda/Desktop/cpp/build/CMakeFiles/files.dir
 /Users/nanda/Desktop/cpp/build/CMakeFiles/smartpointer.dir
+/Users/nanda/Desktop/cpp/build/CMakeFiles/function_pointers.dir
 /Users/nanda/Desktop/cpp/build/CMakeFiles/edit_cache.dir
 /Users/nanda/Desktop/cpp/build/CMakeFiles/rebuild_cache.dir
