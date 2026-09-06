@@ -40,6 +40,52 @@ void scanPrices(
         }
 }
 
+// pointer to class member function
+class PriceAnalyzer{
+
+    private:
+        double m_expensiveLimit;
+       double m_cheapLimit;
+    
+    public:
+       PriceAnalyzer(double expensiveLimit, double cheapLimit)
+        :m_expensiveLimit(expensiveLimit),
+         m_cheapLimit(cheapLimit){}
+
+    bool isExpensive(double price) const
+    {
+        return price > m_expensiveLimit;
+    }
+
+    bool isCheap(double price) const
+    {
+        return price < m_cheapLimit;
+    }
+
+};
+
+// pointer to member funciton.
+// Any member function in PriceAnalyze class that return bool, accepts dobul. 
+using MemberPriceRule = bool (PriceAnalyzer::*)(double) const;
+
+void scanPricesWithMemberRule(
+    span<const double> prices,
+    PriceAnalyzer& analyzer,
+    MemberPriceRule rule,
+    AlertHandler handler)
+{
+    for (size_t i{0}; i < prices.size(); ++i)
+    {
+        // Because the function belongs to PriceAnalyzer,
+        // we need an object on which to call it.
+        if ((analyzer.*rule)(prices[i]))
+        {
+            handler(i, prices[i]);
+        }
+    }
+}
+
+
 int main(){
 
     vector<double> prices={
@@ -66,4 +112,31 @@ int main(){
         printAlert
     );
 
+    cout << "\n\nMEMBER FUNCTION POINTER\n";
+
+    PriceAnalyzer analyzer{
+        110.0,   // expensive if > 110
+        40.0     // cheap if < 40
+    };
+  
+    MemberPriceRule memberRule =
+        &PriceAnalyzer::isExpensive;
+     
+    cout << "\nExpensive prices using class method:\n";
+    scanPricesWithMemberRule(
+        prices,
+        analyzer,
+        memberRule,
+        printAlert
+    );
+    
+    memberRule = &PriceAnalyzer::isCheap;
+
+    cout << "\nCheap prices using class method:\n";
+    scanPricesWithMemberRule(
+        prices,
+        analyzer,
+        memberRule,
+        printAlert
+    );
 }
