@@ -73,7 +73,17 @@ int main(){
     // pass by const ref - void process(const std::string& hostname) - created ref , hostname cannot be changed. *immutable ref in rust.
     // pass by non-const point - void process(std::string* hostname)  - Created duplicate pointer. Changes to hostname inside function affects original vairiable.
     // psss by const point - void process(const std::string* hostname) - create duplicate constant pointer. hostname cannot be changed.
-
+    
+    // virtual keyword usage //
+    // If a base class has few child class and we create object direct on child class like Mysqldb mysql1(0,std::string("mysqlhost2"),20)
+    // then when the object goes out of scope both child class destructor and base class destructor automatically called.
+    //  But if we create base class pointer reference to child class object like - Database* db = new Mysqldb(); then delete db; then we need 
+    // virtual destructor in base class virtual ~Database(), otherwise delete db might not correct call child class destructors. 
+    // virtual functions - these enabled run time polymorphism 
+    // When a base class has gethost function and mysql child class has same function. WHen we create mysql class object and directly call
+    // gethost it will work and correctyl call mysql class function. Mysql mysql; mysql.gethost(). But when use a base class reference to child class object
+    // such as Database& db = Mysql mysql, then if we call db.gethost(), program wont correctly run child class funciton. 
+    // To enable this rum time plymorphism we use virtual keywork on base class function and override keywork on the child class function. Then refernece and functions will work.
 
 
     std::cout<< "main";
