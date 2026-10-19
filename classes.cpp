@@ -276,4 +276,40 @@ int main() {
     //   polymorphism does NOT inherently require heap allocation.
 
     std::cout << "\n[End] Remaining local objects will be destroyed\n";
+
+
+    // ========================================================
+    // CONST OBJECTS AND CONST MEMBER FUNCTIONS
+    // ========================================================
+
+    // 1. Normal object (non-const)
+    Database db1(0, "mysqlhost");
+
+    db1.connect();       // OK: non-const member function
+    db1.gethost();       // OK: const member function
+    db1.isConnected();   // OK: const member function
+
+
+    // 2. Constant object
+    const Database db2(0, "postgreshost");
+
+    std::cout << db2.gethost() << '\n';     // OK
+    std::cout << db2.isConnected() << '\n'; // OK
+
+    // db2.connect(); // COMPILATION ERROR!
+    // A const object cannot call a non-const member function.
+
+
+    // 3. Const reference to a normal object
+    const Database& db3 = db1;
+
+    std::cout << db3.gethost() << '\n';     // OK
+    std::cout << db3.isConnected() << '\n'; // OK
+
+    // db3.connect(); // COMPILATION ERROR!
+    // Even though db1 is non-const, db3 is a const reference.
+
+
+    // 4. Original object can still be modified
+    db1.connect(); // OK
 }
